@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:ffimage="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+            x:Class="ArguSzem.Views.RecvView"
+            Title="{Binding Title}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Kijelentkezés" Command="{Binding LogoutCommand}"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Black">
+            <ActivityIndicator IsRunning="true" IsVisible="{Binding IsBusy}" Color="OrangeRed" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+            <ContentView  VerticalOptions="FillAndExpand">
+                <ffimage:CachedImage Source="{Binding Image}"/>
+            </ContentView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ArguSzem.Views.RegisterView"
+             Title="{Binding Title}"
+             BackgroundColor="AliceBlue">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="20" Padding="50" VerticalOptions="Center">
+                <ActivityIndicator IsRunning="true" IsVisible="{Binding IsBusy}" Color="OrangeRed"/>
+                <Entry Text="{Binding Email, Mode=TwoWay}" Placeholder="Email" ClearButtonVisibility="WhileEditing"></Entry>
+                <Entry Text="{Binding Password, Mode=TwoWay}" Placeholder="Jelszó" IsPassword="True" ClearButtonVisibility="WhileEditing"></Entry>
+                <Entry Text="{Binding ConfirmPassword, Mode=TwoWay}" Placeholder="Jelszó ismét" IsPassword="True" ClearButtonVisibility="WhileEditing"></Entry>
+                <Label IsVisible="{Binding RegFail}" Text="Hiba a regisztráció során: A jelszónak és megerősítő jelszónak egyeznie kell. A jelszó
+                       minimum 6 karakter hosszú, tartalmaz egy nagybetűt egy számot és egy speciális karaktert" TextColor="Red"/>
+                <Button Text="Regisztráció" BackgroundColor="LightBlue" Command="{Binding RegisterCommand}" CornerRadius="90"></Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

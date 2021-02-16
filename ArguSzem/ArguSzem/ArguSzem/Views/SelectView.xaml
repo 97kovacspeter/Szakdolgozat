@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ArguSzem.Views.SelectView"
+             Title="{Binding Title}"
+             BackgroundColor="AliceBlue">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Kijelentkezés" Command="{Binding LogoutCommand}"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="AliceBlue" HorizontalOptions="Center" VerticalOptions="Center">
+                <ActivityIndicator IsRunning="true" IsVisible="{Binding IsBusy}" Color="OrangeRed"/>
+                <Button Text="Megfigyelő mód" Command="{Binding RecvCommand}" BackgroundColor="LightBlue" CornerRadius="90"/>
+                <Label  BackgroundColor="AliceBlue" Padding="10,10,10,10"></Label>
+                <Button Text="Küldő mód" Command="{Binding SenderCommand}" BackgroundColor="LightBlue" CornerRadius="90"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

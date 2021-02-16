@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ArguSzem.Views.SenderView"
+             xmlns:local="clr-namespace:ArguSzem.ViewModels"
+             Title="{Binding Title}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Kijelentkezés" Command="{Binding LogoutCommand}" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Black">
+            <ActivityIndicator Color="Gray" IsRunning="true" IsVisible="{Binding IsBusy}"/>
+            <local:CameraPreview Camera="Rear" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
